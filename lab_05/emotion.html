@@ -22,7 +22,9 @@
             //     paragraphs[i].innerHTML = "<h"+header+">paragraph "+test+"</h"+header+">";
             // }
 
-            let newPara = document.createTextNode("A Jedi craves not these things");
+            let newPara = document.createElement("p");
+            let text = document.createTextNode("A Jedi craves not these things");
+            newPara.appendChild(text);
             document.body.appendChild(newPara);
         </script>
     </body>
