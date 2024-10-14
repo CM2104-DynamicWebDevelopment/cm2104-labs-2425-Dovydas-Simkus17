@@ -12,15 +12,15 @@
         <script>
             let paragraphs = document.getElementsByTagName("p");
             console.log(paragraphs);
-            document.body.insertBefore(paragraphs[2],paragaphs[0]);
+            document.body.insertBefore(paragraphs[2],paragraphs[0]);
 
-            // console.log(paragraphs.length);
-            // let test="cat";
-            // for(i=0;paragraphs.length;i++){
-            //     console.log(i);
-            //     let header = i+1;
-            //     paragraphs[i].innerHTML = "<h"+header+">paragraph "+test+"</h"+header+">";
-            // }
+            console.log(paragraphs.length);
+            let test="cat";
+            for(i=0;paragraphs.length;i++){
+                console.log(i);
+                let header = i+1;
+                paragraphs[i].innerHTML = "<h"+header+">paragraph "+test+"</h"+header+">";
+            }
         </script>
     </body>
 </html>
