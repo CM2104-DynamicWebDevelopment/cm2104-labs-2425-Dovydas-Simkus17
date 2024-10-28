@@ -23,6 +23,10 @@ setCountdown(10);
      console.log(secondsleft--);
      document.getElementById("countdown").innerHTML = secondsleft--;
      //if we are at 0 stop the countdown
-     if(secondsleft <=0){clearInterval(counter)}
+     if(secondsleft <=0){
+      clearInterval(counter)
+      document.getElementById("alarm").innerHTML = "boom";
+      document.getElementById("alarmimage").value = alarm.jpg;
+    }
    }, 1000);
  }
