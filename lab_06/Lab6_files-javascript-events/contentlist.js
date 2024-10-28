@@ -17,3 +17,12 @@ function addContent () {
 	document.getElementById('content').innerHTML = items_html;
 }
 
+function addContentInput(){
+	let inputText = document.getElementById('funk').innerHTML;
+	let finalText = "<li>" + inputText + "</li>" ;  
+	document.getElementById('content').appendChild(finalText);
+	
+}
+function removeContent(){
+	document.getElementById('content').removeChild(lastChild);
+}

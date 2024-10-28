@@ -10,7 +10,14 @@
 	</head>
 	<body id="task2">
 	<!--add a button to call our addContent method-->
-		<button type="button" onclick="addContent()">Click Me!</button>
+		<form>
+			<button type="button" onclick="addContent()">Click Me!</button>
+			<label for="funk">Add to website</label>
+			<textarea id="funk"></textarea>
+			<input type="submit" value="Submit">
+			<label for="remove" >Remove from website</label>
+			<button id="remove"type="button" onclick="removeContent()"></button>
+		</form>
 		<div id="content">
 			<!-- empty div to manipulate -->
 		</div>
