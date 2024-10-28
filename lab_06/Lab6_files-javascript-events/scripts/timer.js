@@ -20,7 +20,7 @@ setCountdown(10);
    var counter = setInterval(function() {
 
      //display the current seconds left
-     console.log(secondsleft--);
+     //console.log(secondsleft--);
      document.getElementById("countdown").innerHTML = secondsleft--;
      //if we are at 0 stop the countdown
      if(secondsleft <=0){
