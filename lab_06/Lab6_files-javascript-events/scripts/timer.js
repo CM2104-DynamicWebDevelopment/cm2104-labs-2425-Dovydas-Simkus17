@@ -26,7 +26,7 @@ setCountdown(10);
      if(secondsleft <=0){
       clearInterval(counter)
       document.getElementById("alarm").innerHTML = "boom";
-      document.getElementById("alarmimage").src = alarm.jpg;
+      document.getElementById("alarmimage").src = "alarm.jpg";
     }
    }, 1000);
  }
