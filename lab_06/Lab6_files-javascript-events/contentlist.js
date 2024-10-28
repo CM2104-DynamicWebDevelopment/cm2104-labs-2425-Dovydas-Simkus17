@@ -18,8 +18,8 @@ function addContent () {
 }
 
 function addContentInput(){
-	let inputText = document.getElementById('funk').innerHTML;
-	let finalText = document.createTextNode("<li>" + inputText + "</li>");  
+	let inputText = document.getElementById('funk').value;
+	let finalText = document.createTextNode(inputText);  
 	document.getElementById('content').appendChild(finalText);
 	
 }
