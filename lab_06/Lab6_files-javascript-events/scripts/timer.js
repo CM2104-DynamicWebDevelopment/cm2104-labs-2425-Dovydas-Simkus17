@@ -21,7 +21,7 @@ setCountdown(10);
 
      //display the current seconds left
      console.log(secondsleft--);
-
+     document.getElementById("countdown").innerHTML = secondsleft--;
      //if we are at 0 stop the countdown
      if(secondsleft <=0){clearInterval(counter)}
    }, 1000);
