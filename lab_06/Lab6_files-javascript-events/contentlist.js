@@ -19,10 +19,10 @@ function addContent () {
 
 function addContentInput(){
 	let inputText = document.getElementById('funk').innerHTML;
-	let finalText = "<li>" + inputText + "</li>" ;  
-	document.getElementById('content').append(finalText);
+	let finalText = document.createTextNode("<li>" + inputText + "</li>");  
+	document.getElementById('content').appendChild(finalText);
 	
 }
 function removeContent(){
-	document.getElementById('content').remove();
+	document.getElementById('content').removeChild(document.getElementById('content').lastChild);
 }
