@@ -40,5 +40,5 @@ setCountdown(17, BadaBoom);
   document.getElementById('alarmimage').src = 'bam.jpg';
  }
  function BadaBoom(){
-  document.getElementById('alarmimage').src =  src='BigBadaBoom.jpg';
+  document.getElementById('alarmimage').src = 'BigBadaBoom.jpg';
  }
