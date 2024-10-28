@@ -25,8 +25,9 @@ setCountdown(10);
      //if we are at 0 stop the countdown
      if(secondsleft <=0){
       clearInterval(counter)
+      let image = document.getElementById("alarmimage")
       document.getElementById("alarm").innerHTML = "boom";
-      document.getElementById("alarmimage") = 'bam.jpg';
+      image.src = 'bam.jpg';
     }
    }, 1000);
  }
