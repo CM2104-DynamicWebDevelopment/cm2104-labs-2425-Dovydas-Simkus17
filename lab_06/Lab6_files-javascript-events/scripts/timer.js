@@ -33,12 +33,12 @@ setCountdown(17, BadaBoom);
  }
 
  function Boom(){
-  document.getElementById('alarm').innerHTML = "<img id='alarmimage' src='alarm.jpg'/>"
+  document.getElementById('alarmimage').innerHTML = "<img id='alarmimage' src='alarm.jpg'/>"
  }
 
  function Bam(){
-  document.getElementById('alarm').innerHTML = "<img id='alarmimage' src='bam.jpg'/>"
+  document.getElementById('alarmimage').innerHTML = "<img id='alarmimage' src='bam.jpg'/>"
  }
  function BadaBoom(){
-  document.getElementById('alarm').innerHTML = "<img id='alarmimage' src='BigBadaBoom.jpg'/>"
+  document.getElementById('alarmimage').innerHTML = "<img id='alarmimage' src='BigBadaBoom.jpg'/>"
  }
