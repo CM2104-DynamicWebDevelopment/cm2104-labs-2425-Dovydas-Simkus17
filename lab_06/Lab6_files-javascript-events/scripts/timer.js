@@ -6,8 +6,9 @@
  * @Last modified time: 14-Feb-192019
  */
 
+setCountdown(10,Bam)
 setCountdown(15, Boom);
-
+setCountdown(17, BadaBoom);
  function setCountdown(delay,callback){
    //sets an timeout delay to display a message after the set delay
    setTimeout(function() {
@@ -26,13 +27,18 @@ setCountdown(15, Boom);
      //if we are at 0 stop the countdown
      if(secondsleft <=0){
       clearInterval(counter)
-      let image = document.getElementById("alarmimage")
       document.getElementById("alarm").innerHTML = "boom";
-      image.src = 'bam.jpg';
     }
    }, 1000);
  }
 
  function Boom(){
   document.getElementById('alarm').innerHTML = "<img id='alarmimage' src='alarm.jpg'/>"
+ }
+
+ function Bam(){
+  document.getElementById('alarm').innerHTML = "<img id='alarmimage' src='bam.jpg'/>"
+ }
+ function BadaBoom(){
+  document.getElementById('alarm').innerHTML = "<img id='alarmimage' src='BigBadaBoom.jpg'/>"
  }
