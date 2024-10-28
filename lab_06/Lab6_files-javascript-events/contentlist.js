@@ -19,7 +19,7 @@ function addContent () {
 
 function addContentInput(){
 	let inputText = document.getElementById('funk').value;
-	let finalText = document.createTextNode(inputText);  
+	let finalText = document.createTextNode(inputText+ ", ");  
 	document.getElementById('content').appendChild(finalText);
 	
 }
