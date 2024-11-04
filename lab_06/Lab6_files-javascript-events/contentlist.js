@@ -14,6 +14,15 @@ function addContent () {
 	// using javascript
 	// 1. find the content div
 	// 2. modify its html attribute by adding items_html
-	
+	document.getElementById('content').innerHTML = items_html;
 }
 
+function addContentInput(){
+	let inputText = document.getElementById('funk').value;
+	let finalText = document.createTextNode(inputText+ ", ");  
+	document.getElementById('content').appendChild(finalText);
+	
+}
+function removeContent(){
+	document.getElementById('content').removeChild(document.getElementById('content').lastChild);
+}

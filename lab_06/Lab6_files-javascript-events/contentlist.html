@@ -8,9 +8,15 @@
 			#content {border: 1px solid #999;}
 		</style>
 	</head>
-	<body id="task2" onload="">
+	<body id="task2">
 	<!--add a button to call our addContent method-->
-
+		<form>
+			<button type="button" onclick="addContent()">Click Me!</button>
+			<label for="funk">Add to website</label>
+			<textarea id="funk"></textarea>
+			<button type="button" onclick="addContentInput()">Submit</button>
+			<button type="button" onclick="removeContent()">Remove from website</button>
+		</form>
 		<div id="content">
 			<!-- empty div to manipulate -->
 		</div>
