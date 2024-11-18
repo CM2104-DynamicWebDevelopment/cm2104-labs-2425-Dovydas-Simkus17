@@ -9,17 +9,13 @@ $(function(){
 		// $(this) is a shortcut for the element we just selected
 		// using $("div")
 		if ($(this).hasClass("red")) {
-			$(this).addClass("blue").removeClass("red");
+			$(this).addClass("blue").fadeIn().removeClass("red").fadeOut();
 		}
 		else if ($(this).hasClass("blue")) {
-			$(this).addClass("green").removeClass("blue");
+			$(this).addClass("green").fadeIn().removeClass("blue").fadeOut();
 		}
 		else if ($(this).hasClass("green")) {
-			$(this).addClass("red").removeClass("green");
+			$(this).addClass("red").fadeIn().removeClass("green").fadeOut();
 		}
 	});
-	$("body").slideDown(3000, function(){
-
-	});
-	
 });
