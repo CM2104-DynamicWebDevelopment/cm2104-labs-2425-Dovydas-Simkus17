@@ -1,8 +1,10 @@
 var http = require('http');
+var currentdate = require('knock-knock-jokes');
 
 http.createServer(function (req, res) {
 
  res.writeHead(200, {'Content-Type': 'text/html'});
- res.end('Hello World!');
+ var randomJocke = knockknock();
+ res.end(randomJocke);
  
 }).listen(8080);
