@@ -8,14 +8,27 @@ $(function(){
 	$("div").click(function(){
 		// $(this) is a shortcut for the element we just selected
 		// using $("div")
+		$(this).click("false");
 		if ($(this).hasClass("red")) {
-			$(this).addClass("blue").fadeIn().removeClass("red").fadeOut();
+
+			$(this).removeClass("red").fadeOut();
+
+			$(this).addClass("blue").fadeIn(); 
 		}
 		else if ($(this).hasClass("blue")) {
-			$(this).addClass("green").fadeIn().removeClass("blue").fadeOut();
+
+			$(this).fadeOut().addClass("green");
+
+			$(this).fadeIn().removeClass("blue");
 		}
 		else if ($(this).hasClass("green")) {
-			$(this).addClass("red").fadeIn().removeClass("green").fadeOut();
+
+			$(this).addClass("red").fadeOut();
+
+			$(this).fadeIn().removeClass("green");
 		}
+		$(this).click("true");
 	});
+
+	
 });
