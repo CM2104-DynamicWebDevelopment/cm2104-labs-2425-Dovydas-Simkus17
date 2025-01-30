@@ -21,17 +21,18 @@ app.get('/add', function(req,res){
     var y = parseInt(req.query.y);
     res.send("X + Y="+(x+y));
 });
+equ
 app.get('/calc', function(req,res){
     var x = parseInt(req.query.x);
     var y = parseInt(req.query.y);
     var op = req.query.operator;
-    if(op.equals("add")){
+    if(Object.equals(op,"add")){
         res.send("X + Y="+(x+y));
-    }else if(op.equals("sub")){
+    }else if(Object.equals(op,"sub")){
         res.send("X - Y="+(x-y));
-    }else if(op.equals("mul")){
+    }else if(Object.equals(op,"mul")){
         res.send("X x Y="+(x*y));
-    }else if(op.equals("div")){
+    }else if(Object.equals(op,"div")){
         res.send("X / Y="+(x/y));
     }else{
         res.send("I don't understand");
