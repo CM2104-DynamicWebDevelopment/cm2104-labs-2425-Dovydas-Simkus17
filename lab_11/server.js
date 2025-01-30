@@ -26,13 +26,13 @@ app.get('/calc', function(req,res){
     var x = parseInt(req.query.x);
     var y = parseInt(req.query.y);
     var op = req.query.operator;
-    if(Object.equals(op,"add")){
+    if(op === "add"){
         res.send("X + Y="+(x+y));
-    }else if(Object.equals(op,"sub")){
+    }else if(op === "sub"){
         res.send("X - Y="+(x-y));
-    }else if(Object.equals(op,"mul")){
+    }else if(op === "mul"){
         res.send("X x Y="+(x*y));
-    }else if(Object.equals(op,"div")){
+    }else if(op === "div"){
         res.send("X / Y="+(x/y));
     }else{
         res.send("I don't understand");
