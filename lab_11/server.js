@@ -44,4 +44,13 @@ app.get('/getform', function(req,res){
     var quest = req.query.quest;
     res.send("Hi " +name+ "! I am sure you will " +quest+ "!");
 });
+app.post('/postform', function(req,res){
+    var name = req.body.name;
+    var quest = req.body.quest;
+    res.send("Hi " +name+ "! I am sure you will " +quest+ "!");
+})
+app.use(express.urlencoded({extended:true}))
+app.use(function (req,res,next){
+    res.send('This pge does not exist!')
+})
 app.listen(8080);
