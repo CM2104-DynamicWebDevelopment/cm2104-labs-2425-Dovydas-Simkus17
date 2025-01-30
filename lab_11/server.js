@@ -38,6 +38,9 @@ app.get('/calc', function(req,res){
     }else{
         res.send("I don't understand");
     }
+});
+app.get('/getform', function(req,res){
     
+    res.send("something")
 });
 app.listen(8080);
