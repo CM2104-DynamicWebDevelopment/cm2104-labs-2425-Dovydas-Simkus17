@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var http = require('http');
 var knockknock = require('knock-knock-jokes');
+ppid.use(express.static('public'));
 
 app.get('/', function(req,res){
     res.send("Hello world! by express");
@@ -19,7 +20,7 @@ app.get('/joke',function (req, res) {
 app.get('/add', function(req,res){
     var x = parseInt(req.query.x);
     var y = parseInt(req.query.y);
-    res.send("X + Y="+(x+y));
+    res.send("X + Y= "+(x+y));
 });
 
 app.get('/calc', function(req,res){
@@ -27,13 +28,13 @@ app.get('/calc', function(req,res){
     var y = parseInt(req.query.y);
     var op = req.query.operator;
     if(op === "add"){
-        res.send("X + Y="+(x+y));
+        res.send("X + Y= "+(x+y));
     }else if(op === "sub"){
-        res.send("X - Y="+(x-y));
+        res.send("X - Y= "+(x-y));
     }else if(op === "mul"){
-        res.send("X x Y="+(x*y));
+        res.send("X x Y= "+(x*y));
     }else if(op === "div"){
-        res.send("X / Y="+(x/y));
+        res.send("X / Y= "+(x/y));
     }else{
         res.send("I don't understand");
     }
