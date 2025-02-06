@@ -30,6 +30,7 @@ async function getTracks(searchterm,res){
             var HTMLResponse = "";
 
             for(var i=0; i<tracks.length;i++){
+                var track = tracks[i];
                 console.log(track.name);
 
                 HTMLResponse = HTMLResponse +
