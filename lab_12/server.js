@@ -11,9 +11,9 @@ var spotifyApi = new SpotifyWebApi({
 spotifyApi.clientCredentialsGrant().then(
     function (data){
         console.log('The access token expires in ' + data.body['expires in']);
-        console.log('The access token is ' + data.body['access_token']);
+        console.log('The access token is ' + data.body['706258909c444e2b8f85d6f19c4d1e1d']);
         //Save the acces token so that it's used in future calls
-        spotifyApi.setAccessToken(data.body['access.token']);
+        spotifyApi.setAccessToken(data.body['706258909c444e2b8f85d6f19c4d1e1d']);
     },
     function(err){
         console.log(
