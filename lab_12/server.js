@@ -13,7 +13,7 @@ spotifyApi.clientCredentialsGrant().then(
         console.log('The access token expires in ' + data.body['expires in']);
         console.log('The access token is ' + data.body['access_token']);
         //Save the acces token so that it's used in future calls
-        spotifyApi.setAccesToken(data.body['access.token']);
+        spotifyApi.setAccessToken(data.body['access.token']);
     },
     function(err){
         console.log(
