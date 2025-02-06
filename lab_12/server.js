@@ -36,7 +36,7 @@ async function getTracks(searchterm,res){
                 HTMLResponse = HTMLResponse +
                 "<div>" +
                     "<h2>"+track.name+"</h2>"+
-                    "<h4>"+track.artist[0].name+"</h4>"+
+                    "<h4>"+track.artists[0].name+"</h4>"+
                     "<img src='"+track.album.images[0].url+"'>"+
                     "<a href='"+track.external_urls.spotify+"'> Track Details </a>"+
                 "</div>";
