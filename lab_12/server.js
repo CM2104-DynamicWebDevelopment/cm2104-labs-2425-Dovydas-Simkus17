@@ -48,7 +48,8 @@ async function getTracks(searchterm,res){
                     "<img src='"+track.album.images[0].url+"'>"+
                     "<a href='"+track.external_urls.spotify+"'> Track Details </a>"+
                 "</div>";
-                console.log(HTMLResponse);
+                //console.log(HTMLResponse);
+                
             }
             getTopTrack(track.artists[0].name,res)
             res.send(HTMLResponse);
