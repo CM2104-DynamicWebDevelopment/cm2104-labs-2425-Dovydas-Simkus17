@@ -1,7 +1,7 @@
 function chgAction(action_name){
     if(action_name=="search"){
-        document.forms.searchTheme.action =="/search";
+        document.getElementById(searchTheme) =="/search";
     }else if(action_name="searchArtist"){
-        document.forms.searchTheme.action =="/searchArtist";
+        document.getElementById(searchTheme) =="/searchArtist";
     }
 }

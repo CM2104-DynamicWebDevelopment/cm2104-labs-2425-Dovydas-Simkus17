@@ -2,15 +2,12 @@
 <html>
     <head>
         <title>Search Track</title>
-        <script src ="server.js"></script>
     </head>
     <body>
         <h1>Express Static Form</h1>
-        <form accept-charset="UTF-8" name="searchTheme" id="searchTheme" onsubmit="javascript:chgAction(name)">
+        <form action="/" accept-charset="UTF-8" >
             Track:<br>
             <input type="text" name="searchterm" value=""/><br>
-            <input type="radio" name="searchTheme" value="search"/>Search<br>
-            <input type="radio" name="searchTheme" value="searchArtist"/>Top Tracks<br>
             <input type="submit" value="Submit"/>
         </form>
     </body>
