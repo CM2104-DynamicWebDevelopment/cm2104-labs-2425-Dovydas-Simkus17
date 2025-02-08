@@ -22,6 +22,14 @@ spotifyApi.clientCredentialsGrant().then(
         )
     }
 )
+async function getTopTrack(artist, res) {
+    spotifyApi.getArtistTopTracks(artist, 'GB')
+        .then(function(data){
+            console.log(data.body);
+        }, function(err){
+            console.log('Something went wrong!',err);
+        })
+}
 async function getTracks(searchterm,res){
     spotifyApi.searchTracks(searchterm)
         .then(function(data){
@@ -47,11 +55,16 @@ async function getTracks(searchterm,res){
             console.error(err);
         });
 }
+
 app.get('/searchLove', function(req,res){
     getTracks('love',res);
 });
 app.get('/search', function(req,res){
     var searchterm = req.query.searchterm;
     getTracks(searchterm,res);
+})
+app.get('/searchArtist', function(req,res){
+    var artist = req.query.searchterm;
+    getTopTrack(artist,res);
 })
 app.listen(8080);
