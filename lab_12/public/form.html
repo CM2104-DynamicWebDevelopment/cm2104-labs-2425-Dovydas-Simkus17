@@ -6,9 +6,11 @@
     </head>
     <body>
         <h1>Express Static Form</h1>
-        <form action="/search" accept-charset="UTF-8" name="search-theme-form" id="search-theme-form">
+        <form action="/" accept-charset="UTF-8" name="search-theme-form" id="search-theme-form">
             Track:<br>
             <input type="text" name="searchterm" value=""/><br>
+            <input type="radio" name="search-theme-form" value="search"/>Search<br>
+            <input type="radio" name="search-theme-form" value="searchArtist"/>Top Tracks<br>
             <input type="submit" value="Submit"/>
         </form>
     </body>
