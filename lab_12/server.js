@@ -51,7 +51,7 @@ async function getTracks(searchterm,res){
                 //console.log(HTMLResponse);
                 
             }
-            getTopTrack(track.artists[0].name,res)
+            getTopTrack(track.artists[0].id,res)
             res.send(HTMLResponse);
         }, function(err){
             console.error(err);
