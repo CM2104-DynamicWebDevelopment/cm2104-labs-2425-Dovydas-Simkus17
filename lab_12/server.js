@@ -27,6 +27,7 @@ async function getTopTrack(artist, res) {
         .then(function(data){
             console.log(data.body);
             var tracks = data.body.tracks.items
+            console.log(tracks);
             //Setting up an empty string to act as the response
             var HTMLResponse = "";
 
