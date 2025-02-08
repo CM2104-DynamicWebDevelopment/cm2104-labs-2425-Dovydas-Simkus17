@@ -87,6 +87,6 @@ app.get('/search', function(req,res){
 })
 app.get('/searchTopTracks', function(req,res){
     var searchterm = req.query.searchterm;
-    getTracks(searchterm,res);
+    getTopTrack(searchterm,res);
 })
 app.listen(8080);
