@@ -50,8 +50,12 @@ app.post('/postform', function(req,res){
     var quest = req.body.quest;
     res.send("Hi " +name+ "! I am sure you will " +quest+ "!");
 })
-
-// app.use(function (req,res,next){
-//     res.send('This pge does not exist!')
-// })
+app.get('/user/:userID/books/:bookid', function(req,res){
+    var userID = req.params.usedID;
+    var bookID = req.params.bookID;
+    res.send("Hello "+userID+ " is this your book?: "+bookID);
+})
+app.use(function (req,res,next){
+    res.send('This pge does not exist!')
+})
 app.listen(8080);
