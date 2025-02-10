@@ -68,4 +68,7 @@ app.get('/searchTopTracks', function(req,res){
     var searchterm = req.query.searchterm;
     getTopTrack(searchterm,res);
 })
+app.use(function (req,res,next){
+    res.send('This page does not exist!')
+})
 app.listen(8080);
