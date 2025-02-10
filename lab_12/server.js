@@ -45,11 +45,11 @@ async function getTracks(searchterm,res){
                 "<div>" +
                     "<h2>"+track.name+"</h2>"+
                     "<h4>"+track.artists[0].name+"</h4>"+
-                    "<button onlick='location.href='/searchTopTracks?searchterm="+siteName+track.artists[0].id+"''>Top Tracks!</button>"+
+                    "<button onlick='location.href='"+siteName+"/searchTopTracks?searchterm="+track.artists[0].id+"''>Top Tracks!</button>"+
                     "<img src='"+track.album.images[0].url+"'>"+
                     "<a href='"+track.external_urls.spotify+"'> Track Details </a>"+
                 "</div>";
-                //console.log(HTMLResponse);
+                console.log(HTMLResponse);
                 
             }
             res.send(HTMLResponse);
