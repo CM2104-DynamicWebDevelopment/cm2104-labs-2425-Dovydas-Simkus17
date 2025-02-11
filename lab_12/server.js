@@ -123,7 +123,6 @@ async function test(searchterm,res){
             var tracks = data.body.tracks.items
             //Setting up an empty string to act as the response
             var HTMLResponse = "";
-            var siteName = "primelucas-gateperson-8080.codio.io";
             for(var i=0; i<tracks.length;i++){
                 var track = tracks[i];
                 console.log(track.name);
