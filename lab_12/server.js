@@ -89,6 +89,33 @@ app.get('/searchTopTracks', function(req,res){
     var searchterm = req.query.searchterm;
     getTopTrack(searchterm,res);
 })
+//TEsting
+async function test(searchterm,res){
+    spotifyApi.searchTracks(searchterm)
+        .then(function(data){
+            var tracks = data.body.tracks.items
+            //Setting up an empty string to act as the response
+            var HTMLResponse = "";
+            var siteName = "primelucas-gateperson-8080.codio.io";
+            for(var i=0; i<tracks.length;i++){
+                var track = tracks[i];
+                console.log(track.name);
+
+                HTMLResponse = HTMLResponse +
+                "<div>" +
+                    "<button onclick='alert('Asda man')'>Top Tracks!</button>"+
+                "</div>";
+                console.log(HTMLResponse);
+                
+            }
+            res.send(HTMLResponse);
+        }, function(err){
+            console.error(err);
+        });
+}
+app.get('/test', function(req,res){
+    test('Bills',res);
+});
 app.use(function (req,res,next){
     res.send('This page does not exist!')
 })
