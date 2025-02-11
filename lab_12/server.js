@@ -22,6 +22,33 @@ spotifyApi.clientCredentialsGrant().then(
         )
     }
 )
+
+async function getTracks(searchterm,res){
+    spotifyApi.searchTracks(searchterm)
+        .then(function(data){
+            var tracks = data.body.tracks.items
+            //Setting up an empty string to act as the response
+            var HTMLResponse = "";
+            for(var i=0; i<tracks.length;i++){
+                var track = tracks[i];
+                //console.log(track.name);
+                HTMLResponse = HTMLResponse +
+                "<div>" +
+                    "<h2>"+track.name+"</h2>"+
+                    "<h4>"+track.artists[0].name+"</h4>"+
+                    "<button onclick=window.location.href=\'/searchRelatedArtists?searchterm="+String(track.artists[0].id)+"\'>Similar Artists!</button>"+
+                    "<button onclick=window.location.href=\'/searchTopTracks?searchterm="+String(track.artists[0].id)+"\'>Top Tracks!</button>"+
+                    "<img src='"+track.album.images[0].url+"'>"+
+                    "<a href='"+track.external_urls.spotify+"'> Track Details </a>"+
+                "</div>";
+                //console.log(HTMLResponse);
+                
+            }
+            res.send(HTMLResponse);
+        }, function(err){
+            console.error(err);
+        });
+}
 async function getTopTrack(artist, res) {
     spotifyApi.getArtistTopTracks(artist, 'GB')
         .then(function(data){
@@ -29,10 +56,9 @@ async function getTopTrack(artist, res) {
             var tracks = data.body.tracks
             //Setting up an empty string to act as the response
             var HTMLResponse = "";
-            var siteName = "primelucas-gateperson-8080.codio.io";
-            for(var i=0; i<5;i++){
+            for(var i=0; i<tracks.length;i++){
                 var track = tracks[i];
-                console.log(track.name);
+                //console.log(track.name);
 
                 HTMLResponse = HTMLResponse +
                 "<div>" +
@@ -49,35 +75,32 @@ async function getTopTrack(artist, res) {
             console.log('Something went wrong!',err);
         })
 }
-async function getTracks(searchterm,res){
-    spotifyApi.searchTracks(searchterm)
+async function getRelated(artist, res) {
+    spotifyApi.getArtistRelatedArtists(artist)
         .then(function(data){
-            var tracks = data.body.tracks.items
+            console.log(data.body);
+            var tracks = data.body.tracks
             //Setting up an empty string to act as the response
             var HTMLResponse = "";
-            var constantUrl = "primelucas-gateperson-8080.codio.io/searchTopTracks?searchterm=";
             for(var i=0; i<tracks.length;i++){
                 var track = tracks[i];
-                console.log(track.name);
-                var searchQuery = "\'" + constantUrl+ String(track.artists[0].id) + "\'"
+                //console.log(track.name);
+
                 HTMLResponse = HTMLResponse +
                 "<div>" +
                     "<h2>"+track.name+"</h2>"+
                     "<h4>"+track.artists[0].name+"</h4>"+
-                    "<button onclick='alert()'>Does this work?</button>"+
-                    "<button onclick=window.location.href=\'/searchTopTracks?searchterm="+String(track.artists[0].id)+"\'>Top Tracks!</button>"+
                     "<img src='"+track.album.images[0].url+"'>"+
                     "<a href='"+track.external_urls.spotify+"'> Track Details </a>"+
                 "</div>";
-                console.log(HTMLResponse);
+                //console.log(HTMLResponse);
                 
             }
             res.send(HTMLResponse);
         }, function(err){
-            console.error(err);
-        });
+            console.log('Something went wrong!',err);
+        })
 }
-
 app.get('/searchLove', function(req,res){
     getTracks('love',res);
 });
@@ -88,6 +111,10 @@ app.get('/search', function(req,res){
 app.get('/searchTopTracks', function(req,res){
     var searchterm = req.query.searchterm;
     getTopTrack(searchterm,res);
+})
+app.get('/searchRelatedArtists', function(req,res){
+    var searchterm = req.query.searchterm;
+    getRelated(searchterm,res);
 })
 //TEsting
 async function test(searchterm,res){
