@@ -79,19 +79,19 @@ async function getRelated(artist, res) {
     spotifyApi.getArtistRelatedArtists(artist)
         .then(function(data){
             console.log(data.body);
-            var tracks = data.body.tracks
+            var artists = data.body.artists
             //Setting up an empty string to act as the response
             var HTMLResponse = "";
             for(var i=0; i<tracks.length;i++){
-                var track = tracks[i];
+                var artist = artists[i];
                 //console.log(track.name);
 
                 HTMLResponse = HTMLResponse +
                 "<div>" +
-                    "<h2>"+track.name+"</h2>"+
-                    "<h4>"+track.artists[0].name+"</h4>"+
-                    "<img src='"+track.album.images[0].url+"'>"+
-                    "<a href='"+track.external_urls.spotify+"'> Track Details </a>"+
+                    "<h2>"+artist.name+"</h2>"+
+                    "<h4>"+artist.popularity+"</h4>"+
+                    "<img src='"+artist.images[0].url+"'>"+
+                    "<a href='"+artist.uri+"'> Artist Details </a>"+
                 "</div>";
                 //console.log(HTMLResponse);
                 
