@@ -26,7 +26,7 @@ async function getTopTrack(artist, res) {
     spotifyApi.getArtistTopTracks(artist, 'GB')
         .then(function(data){
             console.log(data.body);
-            //var tracks = data.body.tracks.items
+            var tracks = data.body.tracks.items
             //Setting up an empty string to act as the response
             var HTMLResponse = "";
             var siteName = "primelucas-gateperson-8080.codio.io";
@@ -64,7 +64,7 @@ async function getTracks(searchterm,res){
                 "<div>" +
                     "<h2>"+track.name+"</h2>"+
                     "<h4>"+track.artists[0].name+"</h4>"+
-                    "<button onclick='alert('Hell yeah')'>Does this work?</button>"+
+                    "<button onclick='alert(Hell yeah)'>Does this work?</button>"+
                     "<button onclick='window.location.href="+siteName+"/searchTopTracks?searchterm="+track.artists[0].id+"'>Top Tracks!</button>"+
                     "<img src='"+track.album.images[0].url+"'>"+
                     "<a href='"+track.external_urls.spotify+"'> Track Details </a>"+
