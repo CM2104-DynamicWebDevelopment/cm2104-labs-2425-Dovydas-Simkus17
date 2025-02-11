@@ -101,6 +101,7 @@ async function getRelated(artist, res) {
             console.log('Something went wrong!',err);
         })
 }
+//Routes
 app.get('/searchLove', function(req,res){
     getTracks('love',res);
 });
@@ -142,7 +143,10 @@ async function test(searchterm,res){
 app.get('/test', function(req,res){
     test('Bills',res);
 });
+
+//404 error
 app.use(function (req,res,next){
     res.send('This page does not exist!')
 })
+//active listening
 app.listen(8080);
