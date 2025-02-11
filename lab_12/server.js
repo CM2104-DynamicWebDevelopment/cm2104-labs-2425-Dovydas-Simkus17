@@ -59,7 +59,7 @@ async function getTracks(searchterm,res){
             for(var i=0; i<tracks.length;i++){
                 var track = tracks[i];
                 console.log(track.name);
-                var searchQuery = "" + constantUrl+track.artists[0].id
+                var searchQuery = "'" + constantUrl+track.artists[0].id + "'"
                 HTMLResponse = HTMLResponse +
                 "<div>" +
                     "<h2>"+track.name+"</h2>"+
