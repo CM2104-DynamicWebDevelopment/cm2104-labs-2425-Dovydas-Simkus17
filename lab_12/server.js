@@ -55,7 +55,7 @@ async function getTracks(searchterm,res){
             var tracks = data.body.tracks.items
             //Setting up an empty string to act as the response
             var HTMLResponse = "";
-            var siteName = "primelucas-gateperson-8080.codio.io";
+            var constantUrl = "primelucas-gateperson-8080.codio.io/searchTopTracks?searchterm=";
             for(var i=0; i<tracks.length;i++){
                 var track = tracks[i];
                 console.log(track.name);
@@ -64,8 +64,8 @@ async function getTracks(searchterm,res){
                 "<div>" +
                     "<h2>"+track.name+"</h2>"+
                     "<h4>"+track.artists[0].name+"</h4>"+
-                    "<button onclick='alert(Hell yeah)'>Does this work?</button>"+
-                    "<button onclick='window.location.href="+siteName+"/searchTopTracks?searchterm="+track.artists[0].id+"'>Top Tracks!</button>"+
+                    "<button onclick='alert()'>Does this work?</button>"+
+                    "<button onclick='window.location.href="+constantUrl+track.artists[0].id+"'>Top Tracks!</button>"+
                     "<img src='"+track.album.images[0].url+"'>"+
                     "<a href='"+track.external_urls.spotify+"'> Track Details </a>"+
                 "</div>";
