@@ -59,13 +59,13 @@ async function getTracks(searchterm,res){
             for(var i=0; i<tracks.length;i++){
                 var track = tracks[i];
                 console.log(track.name);
-
+                var searchQuery = "" + constantUrl+track.artists[0].id
                 HTMLResponse = HTMLResponse +
                 "<div>" +
                     "<h2>"+track.name+"</h2>"+
                     "<h4>"+track.artists[0].name+"</h4>"+
                     "<button onclick='alert()'>Does this work?</button>"+
-                    "<button onclick='window.location.href='"+constantUrl+track.artists[0].id+"'>Top Tracks!</button>"+
+                    "<button onclick='window.location.href="+searchQuery+"'>Top Tracks!</button>"+
                     "<img src='"+track.album.images[0].url+"'>"+
                     "<a href='"+track.external_urls.spotify+"'> Track Details </a>"+
                 "</div>";
