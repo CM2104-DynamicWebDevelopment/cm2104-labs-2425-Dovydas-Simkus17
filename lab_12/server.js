@@ -103,7 +103,7 @@ async function test(searchterm,res){
 
                 HTMLResponse = HTMLResponse +
                 "<div>" +
-                    "<button onclick='alert('Asda man')'>Top Tracks!</button>"+
+                    "<button onclick='alert()'>Top Tracks!</button>"+
                 "</div>";
                 console.log(HTMLResponse);
                 
