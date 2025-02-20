@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>MoggyBook</title>
+        <script>
+            function testResults(form){
+            //Simple scirpt to pop-up form valyes after submission
+            //Grab form element values and store as variables
+            var username = form.username.value;
+            var breed = form.breed.value;
+            var email = form.email.value;
+            var homepage = form.homepage.value;
+            var DOB = form.DOB.value;
+            var about = form.about.value;
+            //Alert message
+            alert("You registered: " + username + ", "+
+            "Breed:" + breed+", "+
+            "Email: " + email+", "+
+            "Home Page: "+ homepage +", "+
+            "Date of Birth: "+ DOB +", "+
+            "About: "+ about);
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Moggybook!</h1>
+
+        <form>
+            <table border="0" cellspacing="5" cellpadding="5">
+                <tr>
+                    <td><label for="username">Username</label></td>
+                    <td>    
+                        <input id="username" type="textarea" name="username">
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="breed">Breed</label></td>
+                    <td>    
+                        <input id="breed" type="textarea" name="breed">
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email</label></td>
+                    <td>    
+                        <input id="email" type="textarea" name="email">
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="homepage">Home Page</label></td>
+                    <td>    
+                        <input id="homepage" type="textarea" name="homepage">
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="dateOfBirth">Date of Birth</label></td>
+                    <td>    
+                        <input id="dateOfBirth" type="textarea" name="DOB">
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="about">About</label></td>
+                    <td>    
+                        <input id="about" type="textarea" name="about">
+                    </td>
+                </tr>
+            </table>
+            <input type="submit" name="submit" value="Submit" onClick="testResults(this.form)"/>
+        </form>
+    </body>
+</html>
