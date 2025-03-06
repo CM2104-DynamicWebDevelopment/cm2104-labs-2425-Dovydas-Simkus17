@@ -54,6 +54,7 @@ async function connectDB() {
 
 //this is our root route
 app.get('/', function(req, res) {
+  var uname = "";
   //if the user is not logged in redirect them to the login page
   if(!req.session.loggedin){res.redirect('/login');return;}
   db.collection('people').findOne({"login.username": uname}, function(err, result) {
@@ -136,7 +137,7 @@ app.post('/dologin', function(req, res) {
 
 
 
-    if(result.login.password == pword){ req.session.loggedin = true; req.session.currentuser = uname; res.redirect('/') }
+    if(result.login.password == pword){ req.session.loggedin = true; req.session.user = uname; res.redirect('/') }
     
 
 
