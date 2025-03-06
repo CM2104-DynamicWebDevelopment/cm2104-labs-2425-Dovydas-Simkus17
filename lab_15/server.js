@@ -49,7 +49,7 @@ async function connectDB() {
     console.log('Listening for connections on port 8080');
 }
 
-uname = "";
+uname = "james";
 //********** GET ROUTES - Deal with displaying pages ***************************
 
 //this is our root route
