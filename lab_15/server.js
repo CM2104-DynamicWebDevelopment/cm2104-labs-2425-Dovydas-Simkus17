@@ -56,10 +56,10 @@ async function connectDB() {
 app.get('/', function(req, res) {
   //if the user is not logged in redirect them to the login page
   if(!req.session.loggedin){res.redirect('/login');return;}
-  var uname = req.query.username
   //otherwise perfrom a search to return all the documents in the people collection
   db.collection('people').find().toArray(function(err, result) {
     if (err) throw err;
+    var uname = req.query.username;
     //the result of the query is sent to the users page as the "users" array
     res.render('pages/users', {
       users: result,
