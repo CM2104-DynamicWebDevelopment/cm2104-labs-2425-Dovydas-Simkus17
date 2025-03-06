@@ -57,7 +57,7 @@ app.get('/', function(req, res) {
   //if the user is not logged in redirect them to the login page
   if(!req.session.loggedin){res.redirect('/login');return;}
   var uname = "";
-  db.collection('people').findOnefindOne({"login.username": uname}, function(err, result) {
+  db.collection('people').findOne({"login.username": uname}, function(err, result) {
     if (err) throw err;
     uname = result;
   });
