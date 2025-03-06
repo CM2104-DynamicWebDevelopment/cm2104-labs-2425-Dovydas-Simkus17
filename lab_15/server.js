@@ -49,7 +49,7 @@ async function connectDB() {
     console.log('Listening for connections on port 8080');
 }
 
-
+uname = "";
 //********** GET ROUTES - Deal with displaying pages ***************************
 
 //this is our root route
@@ -58,7 +58,6 @@ app.get('/', function(req, res) {
   //if the user is not logged in redirect them to the login page
   if(!req.session.loggedin){res.redirect('/login');return;}
 
-  console.log(uname);
   db.collection('people').findOne({"login.username":uname}, function(err, result) {
     if (err) throw err;
     username = result;
