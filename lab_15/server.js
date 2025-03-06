@@ -61,6 +61,7 @@ app.get('/', function(req, res) {
     if (err) throw err;
     uname = result;
   });
+  console.log(uname);
   //otherwise perfrom a search to return all the documents in the people collection
   db.collection('people').find().toArray(function(err, result) {
     if (err) throw err;
