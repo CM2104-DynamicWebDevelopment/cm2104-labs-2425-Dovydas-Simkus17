@@ -82,7 +82,7 @@ app.get('/login', function(req, res) {
 
 app.get('/profile', function(req, res) {
   if(!req.session.loggedin){res.redirect('/login');return;}
-  uname = req.session.currentuser;
+  var uname = req.query.username;
  
   db.collection('people').findOne({"login.username": uname}, function(err, result) {
     if (err) throw err;
