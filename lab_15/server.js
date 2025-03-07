@@ -56,7 +56,7 @@ app.get('/', function(req, res) {
 
   //if the user is not logged in redirect them to the login page
   if(!req.session.loggedin){res.redirect('/login');return;}
-  uname = req.session.user;
+  uname = req.session.currentuser;
 
 
   db.collection('people').find().toArray(function(err, usersResult) {
@@ -136,7 +136,7 @@ app.post('/dologin', function(req, res) {
 
 
 
-    if(result.login.password == pword){ req.session.loggedin = true; req.session.user = uname; res.redirect('/') }
+    if(result.login.password == pword){ req.session.loggedin = true; req.session.currentuser = uname; res.redirect('/') }
     
 
 
