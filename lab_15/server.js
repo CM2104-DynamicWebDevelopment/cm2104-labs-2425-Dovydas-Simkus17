@@ -49,7 +49,6 @@ async function connectDB() {
     console.log('Listening for connections on port 8080');
 }
 
-uname = "james";
 //********** GET ROUTES - Deal with displaying pages ***************************
 
 //this is our root route
@@ -62,7 +61,7 @@ app.get('/', function(req, res) {
   db.collection('people').findOne({"login.username":uname}, function(err, userResult) {
     if (err) throw err;
     //otherwise perfrom a search to return all the documents in the people collection
-    db.collection('people').find().toArray(function(err, usersResult) {
+    db.collection('people').findOne({"login.username":uname}, function(err, userResult) {
       if (err) throw err;
       //the result of the query is sent to the users page as the "users" array
       res.render('pages/users', {
