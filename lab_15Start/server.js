@@ -49,29 +49,23 @@ async function connectDB() {
     console.log('Listening for connections on port 8080');
 }
 
+
 //********** GET ROUTES - Deal with displaying pages ***************************
 
 //this is our root route
 app.get('/', function(req, res) {
-
   //if the user is not logged in redirect them to the login page
   if(!req.session.loggedin){res.redirect('/login');return;}
-  uname = req.session.currentuser;
 
-
-  db.collection('people').find().toArray(function(err, usersResult) {
+  //otherwise perfrom a search to return all the documents in the people collection
+  db.collection('people').find().toArray(function(err, result) {
     if (err) throw err;
-    //otherwise perfrom a search to return all the documents in the people collection
-    db.collection('people').findOne({"login.username":uname}, function(err, userResult) {
-      if (err) throw err;
-      //the result of the query is sent to the users page as the "users" array
-      res.render('pages/users', {
-        users: usersResult,
-        usename: userResult
-      })
+    //the result of the query is sent to the users page as the "users" array
+    res.render('pages/users', {
+      users: result
+    })
+  });
 
-    });
-  })
 });
 
 //this is our login route, all it does is render the login.ejs page.
@@ -82,7 +76,10 @@ app.get('/login', function(req, res) {
 
 app.get('/profile', function(req, res) {
   if(!req.session.loggedin){res.redirect('/login');return;}
+  
+  
   var uname = req.query.username;
+  
  
   db.collection('people').findOne({"login.username": uname}, function(err, result) {
     if (err) throw err;
@@ -136,8 +133,8 @@ app.post('/dologin', function(req, res) {
 
 
 
-    if(result.login.password == pword){ req.session.loggedin = true; req.session.currentuser = uname; res.redirect('/') }
-    
+    if(result.login.password == pword){ req.session.loggedin = true; res.redirect('/') }
+
 
 
     else{res.redirect('/login')}
