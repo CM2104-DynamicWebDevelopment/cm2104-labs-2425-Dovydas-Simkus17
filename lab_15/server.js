@@ -214,7 +214,7 @@ app.post('/doupdate', function(req, res) {
   if(!req.session.loggedin){res.redirect('/login');return;}
 
   //we create the data string from the form components that have been passed in
-
+uname = req.session.currentuser
 var datatostore = {
 "gender":req.body.gender,
 "name":{"title":req.body.title,"first":req.body.first,"last":req.body.last},
@@ -224,10 +224,9 @@ var datatostore = {
 "dob":req.body.dob,"registered":Date(),
 "picture":{"large":req.body.large,"medium":req.body.medium,"thumbnail":req.body.thumbnail},
 "nat":req.body.nat}
-
-
+var updateUser = {"login":{"username":uname}}
 //once created we just run the data string against the database and all our new data will be saved/
-  db.collection('people').update(datatostore, function(err, result) {
+  db.collection('people').updateOne(updateUser, datatostore, function(err, result) {
     if (err) throw err;
     console.log('saved to database')
     //when complete redirect to the index
