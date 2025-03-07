@@ -82,7 +82,7 @@ app.get('/login', function(req, res) {
 
 app.get('/profile', function(req, res) {
   if(!req.session.loggedin){res.redirect('/login');return;}
-  var uname = req.query.username;
+  uname = req.session.currentuser;
  
   db.collection('people').findOne({"login.username": uname}, function(err, result) {
     if (err) throw err;
@@ -101,7 +101,7 @@ app.get('/adduser', function(req, res) {
 //adduser route simply draws our adduser page
 app.get('/updateuser', function(req, res) {
   if(!req.session.loggedin){res.redirect('/login');return;}
-  var uname = req.query.username;
+  uname = req.session.currentuser;
  
   db.collection('people').findOne({"login.username": uname}, function(err, result) {
     if (err) throw err;
