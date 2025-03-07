@@ -58,7 +58,8 @@ app.get('/', function(req, res) {
   if(!req.session.loggedin){res.redirect('/login');return;}
   uname = req.session.user;
 
-  db.collection('people').findOne({"login.username":uname}, function(err, userResult) {
+
+  db.collection('people').find().toArray(function(err, usersResult) {
     if (err) throw err;
     //otherwise perfrom a search to return all the documents in the people collection
     db.collection('people').findOne({"login.username":uname}, function(err, userResult) {
