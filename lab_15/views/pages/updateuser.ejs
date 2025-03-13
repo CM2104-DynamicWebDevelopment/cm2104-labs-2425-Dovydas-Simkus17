@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<header>
+  <%- include('../partials/head')%>
+</header>
+
+
+<body class="container">
+    <header>
+      <%- include('../partials/header') %>
+    </header>
+
+  <main>
+    <div class="jumbotron">
+
+      <!-- form with entry box for each bit of inomfrtaion we want from our user. -->
+      <h3>Update User</h3>
+
+      <!-- submits to our /adduser route. -->
+      <form action="/doupdate" method="POST">
+        <h2><%= user.name.title %></h2>
+        <input type="text" placeholder="title" name="title">
+        <h2><%= user.name.first %></h2>
+        <input type="text" placeholder="first" name="first">
+        <h2><%= user.name.last %></h2>
+        <input type="text" placeholder="last"  name="last">
+        </br>
+        <h2><%= user.login.email %></h2>
+        <input type="email" placeholder="me@example.com" name="email">
+        <h2><%= user.login.username %></h2>
+        <input type="text" placeholder="username" name="username">
+        <h2><%= user.login.password %></h2>
+        <input type="password" placeholder="password" name="password">
+        </br><label>Details</label>
+        <h2><%= user.gender %></h2>
+        <input type="text" placeholder="gender" name="gender">
+        <h2><%= user.dob %></h2>
+        <input type="datetime" placeholder="date of birth"    name="dob">
+        <h2><%= user.nat %></h2>
+        <input type="text" placeholder="nationality" name="nat">
+        </br><label>Location</label>
+        <h2><%= user.location.street %></h2>
+        <input type="text" placeholder="street"   name="street">
+        <h2><%= user.location.city %></h2>
+        <input type="text" placeholder="city"     name="city">
+        <h2><%= user.location.state %></h2>
+        <input type="text" placeholder="state"    name="state">
+        <h2><%= user.location.postcode %></h2>
+        <input type="text" placeholder="postcode" name="postcode">
+
+        </br><button type="submit">Submit</button>
+      </form>
+
+
+
+    </div>
+  </main>
+
+
+  <footer>
+    <%- include('../partials/footer') %>
+  </footer>
+
+</body>
+
+</html>
